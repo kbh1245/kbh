@@ -1,0 +1,26 @@
+ it('should display home page', function() {
+	 // browser.sleep(2000);
+    username.sendKeys('1mp49');
+    password.sendKeys('12345678*');
+	
+    goButton.click();
+	//protractor.promise.delayed(1000);
+		
+    //timeset.value=10;
+	var latestResult = element(by.id('msg'));
+	//var latestResult =  by.xpath("//div[@class,'alert')]");
+   // expect( latestResult.getText()).toEqual('SuccessFully Authenticated!!!');
+	//browser.sleep(6000);
+	//writeToLog("saw elements");
+	
+	browser.wait(function(){
+	latestResult.isPresent()},
+	27054,"Element NOT found");
+	
+
+	//expect(element(by.id('msg')).isPresent()).toBe(false);
+	expect(latestResult.getText()).toEqual('SuccessFully Authenticated!!!');
+	//writeToLog("saw elements");
+
+	
+  });
